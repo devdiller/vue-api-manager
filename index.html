@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Vue Api Fetch & Filter</title>
+
+    <meta name="description" content="Vue Api Search">
+    <meta name="author" content="shmzkh">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+
+<body>
+<div class="cover">
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <label for="search">Search (ex. Lean , Bauch)</label>
+                    <input type="text" name="search" id="search" v-model="searchText"
+                           placeholder="Your input here..."/>
+                </div>
+            </div>
+            <div class="col s12">
+                <ul>
+                    <transition-group name="list" tag="li">
+                        <li v-for="(client, key) in filteredClients" v-bind:key="client.email"
+                            class="card cyan lighten-2 list-item z-depth-3">
+                            <div class="card-content white-text">
+                                <span class="card-title">{{client.name}}</span>
+                                <p><b>{{client.username}}</b></p>
+                                <p>{{client.email}}</p>
+                            </div>
+                        </li>
+                    </transition-group>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+</html>

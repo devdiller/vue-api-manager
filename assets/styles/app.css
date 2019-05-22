@@ -1,0 +1,25 @@
+html, body, .cover {
+    height: 100vh;
+}
+
+input {
+    color:white;
+}
+
+.cover {
+    background: url('/assets/images/space.jpg') no-repeat left top;
+    background-size: cover;
+    padding-top:144px;
+}
+
+.list-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+    transition: all 0.6s;
+}
+.list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateY(15px);
+}
